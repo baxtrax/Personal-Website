@@ -1397,28 +1397,6 @@ header .logo a {
 	left: 1.2rem;
 }
 
-.intro-social {
-	display: block;
-	position: absolute;
-	width: 100%;
-	left: 0;
-	bottom: 7.2rem;
-	font-size: 3.3rem;
-	margin: 0;
-	padding: 0;
-}
-.intro-social li {
-	display: inline-block;
-	margin: 0 20px;
-	padding: 0;
-}
-.intro-social li a, .intro-social li a:visited {
-	color: #FFFFFF;
-}
-.intro-social li a:hover, .intro-social li a:focus {
-	color: #00adef;
-}
-
 /**
  * responsive:
  * Intro
@@ -1427,12 +1405,6 @@ header .logo a {
 @media only screen and (max-width:1024px) {
 	.intro-content h1 {
 		font-size: 7.6rem;
-	}
-	.intro-social {
-		font-size: 3rem;
-	}
-	.intro-social li {
-		margin: 0 15px;
 	}
 }
 @media only screen and (max-width:768px) {
@@ -1447,12 +1419,6 @@ header .logo a {
 	}
 	.intro-content .intro-position {
 		font-size: 1.3rem;
-	}
-	.intro-social {
-		font-size: 2.5rem;
-	}
-	.intro-social li {
-		margin: 0 10px;
 	}
 }
 @media only screen and (max-width:600px) {
@@ -1476,9 +1442,6 @@ header .logo a {
 	}
 	.intro-content .intro-position span::before, .intro-content .intro-position span::after {
 		display: none !important;
-	}
-	.intro-social {
-		font-size: 2.4rem;
 	}
 }
 
