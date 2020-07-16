@@ -267,6 +267,7 @@ hr {
 	height: 0;
 }
 
+
 /**
  * Lists - (_document-setup.scss)
  * -------------------------------------------------------------------
@@ -315,6 +316,7 @@ dd {
 	margin: 0 0 0 2rem;
 }
 
+
 /**
  * tables - (_document-setup.scss)
  * -------------------------------------------------------------------
@@ -325,19 +327,23 @@ table {
 	max-width: 100%;
 	font-family: "lora-regular", sans-serif;
 }
+table p {
+	margin-bottom: 0rem;
+}
 th, td {
-	padding: 1.5rem 3rem;
+	padding: 2.5rem 3rem;
 	text-align: left;
 	border-bottom: 1px solid #E8E8E8;
 }
 th {
-	color: #313131;
+	color: #ffffff;
 	font-family: "poppins-bold", sans-serif;
 }
 td {
 	line-height: 1.5;
 }
 th:first-child, td:first-child {
+
 	padding-left: 0;
 }
 th:last-child, td:last-child {
@@ -347,6 +353,12 @@ th:last-child, td:last-child {
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 }
+.table-responsive-list {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	margin-top: -10rem;
+}
+
 
 /**
  * Spacing - (_document-setup.scss)
@@ -1095,7 +1107,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	}
 }
 
-
 /**
  * ===================================================================
  * 09. header styles - (_layout.scss)
@@ -1261,14 +1272,14 @@ header .logo a {
 }
 .main-navigation li a {
 	display: block;
-	color: #FFFFFF;
+	color: #00adef;
 	width: auto;
 	padding: 15px 0;
 	line-height: 16px;
 	border: none;
 }
 .main-navigation li a:hover {
-	color: #00adef;
+	color: #0093ce;
 	padding-left: 1rem;
 }
 .main-navigation li.current > a {
@@ -2106,10 +2117,30 @@ header .logo a {
 	}
 }
 
+/**
+ * ===================================================================
+ * 17. Top-intro - (_layout.scss)
+ *
+ * -------------------------------------------------------------------
+ */
+#top-intro {
+	background: #151515;
+	height: 10rem;
+	text-align: center;
+	transform: translateY(7.41rem);
+}
+#top-intro h1 {
+	transform: translateY(-7rem);
+	color: #00adef;
+	line-height: 1.875;
+	letter-spacing: .4rem;
+	text-transform: uppercase;
+
+}
 
 /**
  * ===================================================================
- * 17. contact - (_layout.scss)
+ * 18. contact - (_layout.scss)
  *
  * -------------------------------------------------------------------
  */
@@ -2347,7 +2378,6 @@ header .logo a {
 		transform: scale(1);
 	}
 }
-
 
 /**
  * ===================================================================
