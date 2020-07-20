@@ -330,6 +330,15 @@ table {
 table p {
 	margin-bottom: 0rem;
 }
+
+table .caution {
+	filter: blur(3px);
+	background-color: rgba(248, 255, 146, 0.212);
+	background-image: url("../images/caution1.png"), url("../images/caution2.png");
+	background-position: bottom, top;
+	background-repeat: no-repeat, no-repeat;
+
+}
 th, td {
 	padding: 2.5rem 3rem;
 	text-align: left;
@@ -964,6 +973,58 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	line-height: 1.5;
 	margin-bottom: 0;
 	letter-spacing: -.1rem;
+}
+/** Documentation **/
+
+.documentation {
+	position: inherit;
+	width: 100%;
+}
+
+.documentation .top-title h1{
+	font-size: 5rem;
+	line-height: 1.355;
+	letter-spacing: -.1rem;
+	color: #313131;
+	font-family: "poppins-semibold", sans-serif;
+	font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+
+.documentation .header {
+	background: #151515;
+	height: 10rem;
+	text-align: center;
+}
+
+.documentation .header h1 {
+	color: #00adef;
+	line-height: 1.875;
+	letter-spacing: .4rem;
+	position: relative;
+    bottom: -.4rem;
+	text-transform: uppercase;
+}
+
+.documentation .date span {
+	font-size: 1.6rem;
+    line-height: 1.875;
+	letter-spacing: .4rem;
+	text-transform: uppercase;
+	color: #00adef;
+	font-family: "poppins-semibold", sans-serif;
+	font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+
+.documentation .date time{
+	font-size: 3rem;
+	line-height: 1.355;
+	letter-spacing: -.1rem;
+	color: #a1a1a7;
+	font-family: "poppins-semibold", sans-serif;
+	font-style: normal;
+    text-rendering: optimizeLegibility;
 }
 
 /**
