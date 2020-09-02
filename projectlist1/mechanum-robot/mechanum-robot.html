@@ -79,7 +79,7 @@
    		<div class="col-twelve">
             <div class = "documentation">
                 <div class = "date">
-                    <span>Updated</span> <time>/ April, 15, 2020</time>
+                    <span>Updated</span> <time>/ July, 23, 2020</time>
                 </div>
                 <div class = "top-title">
                     <h1>The in-depth design process of a custom Mechanum Robot</h1>
@@ -91,7 +91,8 @@
     <div class = "row">
         <div class="tab-full">
             <div class = "documentation">
-                <img class="s1" alt="sample-image" src="images/p1010075-fix.png">
+				<img class="s1" alt="sample-image" src="images/p1010075-fix.png">
+				<h5 class="source">Source: me :)</h5>
 				<h1>Overview</h1><hr>
                 <p>
 					The purpose of this page is to document the decisions made behind this mechanum robot. 
@@ -116,8 +117,9 @@
 						</ul>
                         <li><a>Mechanical Design</a></li>
                         <ul class = "sub">
-							<li><a>Main Layout</a></li>
 							<li><a>Developing in CAD</a></li>
+							<li><a>Main Layout</a></li>
+							<li><a>Nuts and Bolts</a></li>
                             <li><a>The Mechanum Wheels</a></li>
                         </ul>
                         <li><a>Electronic Design</a></li>
@@ -132,6 +134,7 @@
                             <li><a>The Client Control Software</a></li>
                             <li><a>The Server Control Software</a></li>
 						</ul>
+						<li><a>Further Readings</a></li>
 						<li><a>Files</a></li>
                         <ul class = "sub">
                             <li><a>CADD</a></li>
@@ -149,28 +152,147 @@
 					apart of the design process, so its nothing new.
 				</p>
 				
-				<h2>Main Layout</h2>
-				<p>The main layout of the robot consists of an 1/8th inch (3.175 mm) solid aluminium, cnc cut, plate. This plate has mounting holes for standoffs and brackets. There are 4 steppers motors, one on each corner facing outwards. These steppers are mounted using steel brackets that are bolted down to the bottom plate. Between these steppers are a custom built driver board which handels all the coil driving for the steppers it is between. The driver boards are held in place using a 3D Printed bracket the is mounted to the stepper brackets. Right in the middle of the robot is where the power distribution and logic handeling is done. The battery and 12V-5V DC-DC Converter are placed directly on the plate. Above the bottom plate is another aluminium plate called the top plate, that is of the same thickness of the bottom plate that is held up using brass standoffs. On that holds the "brains" <small>(Raspberry Pi 3b+ w/ a Arduino Leonardo Sheild)</small>.</p>
+				<h2>Developing in CADD</h2>
+				<p>
+					Before jumping into buying pieces for the robot, I ended up designing 
+					a moc-up in CADD. In doing so I was able to figure out most of the spacing and find 
+					out where I need holes for mounting brackets etc. I will use the CADD in some cases 
+					to show pictures of the design of the robot that I would otherwise not be able to 
+					with the physical thing.
+				</p>
 
 				<p>
-					Some of the problems that I ran into because of the compact size was were:
+					Due to the compact nature of the 
+					robot, even with CADD, I still had problems with some things not working how I 
+					wanted them to and it also left me no room for expansion.
+				</p>
+
+				<p>
+					Some of the problems that I ran into because of the compact size were:
 				</p>
 				<ul>
-					 <li>Overall placement of driverboards <small>(The boards between the stepper motors)</small></li>
-					 <li>Size of the stepper motors</li>
-					 <li>Battery size and capacity</li>
-					 <li>I/O ease of access</li>
-					 <li>Room for cooling fans</li>
+					<li>Overall placement of driverboards <small>(The boards between the stepper motors)</small></li>
+					<li>Size of the stepper motors</li>
+					<li>Battery size and capacity</li>
+					<li>I/O ease of access</li>
+					<li>Room for cooling fans</li>
 				</ul>
 
+				<h2>Main Layout</h2>
+				<p>
+					The main layout of the robot consists of an 1/8th inch (3.175 mm) solid aluminium, 
+					cnc cut, plate. This plate has mounting holes for standoffs and brackets. There 
+					are 4 steppers motors, with mechanum wheels attached to their D shaped shafts with a 
+					key. There is one stepper on each corner facing outwards. These steppers are mounted 
+					using steel brackets that are bolted down to the bottom plate. Between these steppers 
+					are a custom built driver board which handels all the coil driving for the steppers 
+					it is between. 
+				</p>
+
+				<p>
+					The driver boards are held in place using a 3D Printed bracket the 
+					is mounted to the stepper brackets. Right in the middle of the robot is where the 
+					power distribution and logic handeling is done. The battery and 12V-5V DC-DC 
+					Converter are placed directly on the plate. Above the bottom plate is another 
+					aluminium plate called the top plate, that is of the same thickness of the bottom 
+					plate. This plate is held up using brass standoffs. On that holds the "brains" 
+					<small>(Raspberry Pi 3b+ w/ a Arduino Leonardo Sheild)</small>.
+				</p>
+
+				<img class="s1" alt="sample-image" src="images/Main v56.png">
+				<h5 class="source">Source: me :)</h5>
+
+				<h2>Nuts and Bolts</h2>
+				<p>
+					One of the main issues when using stepper motors is the vibration that they can 
+					generate when in use. The vibration is at its worst when it is at something 
+					called its "resonant frequency" or "resonance". All stepper motors have resonance, 
+					and you can measure how much osillation you are having by coupaling a DC Motor 
+					Shaft with your Stepper motor shaft and connecting the DC Motor output to an 
+					osiclloscope. There are also mathmatical ways to figure out the resonant frequency 
+					but that is out side the scope of this documentation. I will link more articles on 
+					this topic in the <a>Further Readings</a> section 
+				</p>
+
+				<p>
+					You can counter act this a few ways. One way is by stepping a stepper slower or 
+					faster depeneding on where the resonance is located. Most of the time resonance 
+					only happens at a few different frequencys then goes away at high or lower drive 
+					frequencies. This can be shown here:
+				</p>
+
+				<img class="s1" alt="sample-image" src="images/ramp.png">
+				<h5 class="source"> Source: http://www.euclidres.com/apps/stepper_motor/stepper.html</h5>
+
+				<p>
+					Or by using something called 
+					microsteping. Microstepping is explained later on in <a>Electronic Design</a>. Not only this 
+					but due to how the mechanum wheels are shaped, it is not always a smooth ride.
+				</p>
+
+				<p>
+					The problem with the vibration is that the nuts and bolts that are holding on 
+					to the wheels, keeping the steppers in place, and basically holding the whole 
+					robot together; can worm their way loose and even come off entirely. There are 
+					multiple ways to fix this such as locktite or just tightening the nuts every 
+					time you use the robot. Even then, these are not permenant and require upkeep. 
+					There is another solution that keep everything together without as much upkeep. 
+					They are called nylon lock nuts.
+				</p>
+				<img class="s1" alt="sample-image" src="images/Nylon-lock.jpg">
+				<h5 class="source">Source: No longer available E-Bay listing</h5>
+
                 <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.
-                    Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu
-                    posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum
-                    odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra
-                    condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque.
-                    posuere nunc justo tempus leo.
-                </p>
+					Nylon lock nuts are perfect for this problem. When threaded onto a bolt, the 
+					nylon on the end of the nut holds onto the threads of the nut tightly, keeping 
+					it from coming off. There is obviously more science behind it then just my 
+					explanation.
+				</p>
+
+				<h2>The Mechanum Wheels</h2>
+
+				<img class="s1" alt="sample-image" src="images/wheel.png">
+				<h5 class="source">Source: me :)</h5>
+				
+				<p>
+					The mechanum wheel is one of the key parts of this entire robot. It is the 
+					main reason I wanted to make this robot. When I first started this project, I 
+					knew I wanted to use these wheels, but I did not know how hard it was going to be 
+					to program them CORRECTLY. How to drive these wheels correctly requires using 
+					a kinematics algorithm that spits out the wheel speed calculations easily. I 
+					will go into more detail about how to program a mechanum drive train in the 
+					<a>Software Design</a> section.
+				</p>
+
+				<p>
+					The key feature of Mechanum wheels is that a full drivetrain can translate
+					<small>(Moving around without turning)</small>. A normal RC drivetrain usually 
+					has the front two wheels turn and the back two wheels drive, just like a car. 
+					A mechanum drivetrain can slide in almost any direction without turning the chassis 
+					of the robot. The way it does this is by taking advantage of angled rollers where 
+					a normal wheelbase would be.
+				</p>
+				
+				<p>
+					Mechanum wheels have to be setup a certain way for translation to work. For a proper 
+					mechanum drivetrain, all wheels need to have their rollers pointing towards 
+					the center of the robot like so:
+				</p>
+
+				<img class="s1" alt="sample-image" src="images/p1010075-zoom_LI.jpg">
+				<h5 class="source">Source: me :)</h5>
+
+                <p>
+					The next step after pointing the wheels in their right orientation is to actually drive the steppers that are connected to the wheels.
+				</p>
+				
+				<h1>Further Readings</h1><hr>
+				<ul class="toc">
+					<li><a>Stepper Motor Resonance</a></li>
+					<ul class = "sub">
+						<li><a href="https://www.fxsolver.com/browse/formulas/Motor+Resonance+Frequency">Mathmatical Resonance Equation</a></li>
+						<li><a href="http://www.euclidres.com/apps/stepper_motor/stepper.html">Detailed graphs and explanation</a></li>
+					</ul>
 
                 <img class="s1" alt="sample-image" src="images/4to3.jpg">
 

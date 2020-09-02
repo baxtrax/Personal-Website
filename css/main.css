@@ -451,7 +451,7 @@ img.preview {
 img.s1 {
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 2rem;
+	margin-bottom: 0.25rem;
 	border-radius: 5%;
 	width: 400rem;
 }
@@ -1078,6 +1078,14 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	font-family: "poppins-semibold", sans-serif;
 	font-style: normal;
     text-rendering: optimizeLegibility;
+}
+
+.documentation h5.source {
+	font-size: 1rem;
+	color: #a1a1a7;
+	text-align: right;
+	margin-bottom: 1.75rem;
+	transform: translateY(-10px);
 }
 
 .documentation .date time{
