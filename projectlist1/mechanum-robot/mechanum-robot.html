@@ -55,7 +55,7 @@
 
                 <nav id="main-nav-wrap">
                      <ul class="main-navigation">
-                             <li><a href="../index.html#intro" title="">Home</a></li>
+                             <li><a href="../../index.html#intro" title="">Home</a></li>
                              <li><a href="../projectlist.html" title="">Projects</a></li>			
                              <li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>			
                      </ul>
@@ -90,10 +90,80 @@
 
     <div class = "row">
         <div class="tab-full">
-            <div>
-                <h1>Overview</h1>
+            <div class = "documentation">
+                <img class="s1" alt="sample-image" src="images/p1010075-fix.png">
+				<h1>Overview</h1><hr>
+                <p>
+					The purpose of this page is to document the decisions made behind this mechanum robot. 
+					The robot took me roughly 6 months to develop, but after a long break from the project,
+					it took me another 2-4 months to get where it is now. I ended up completely recoding 
+					the entire thing because I was unhappy with the overall hastily put together code. I 
+					also wanted more functionality which my current code would not be able to support without 
+					a rewrite.
+				</p>
+				
+				<p>
+					To make it easier to understand, I will be separating the electronic, mechanical, and 
+					software designs. If a section uses information from another, I will link it before 
+					going into detail about that section. Onwards!
+				</p>
 
-                <p><a href="#"><img width="120" height="120" class="pull-left" alt="sample-image" src="images/sample-image.jpg"></a>
+                <h2>Table of Contents</h2>
+                <ul class="toc">
+						<li><a>Overview</a></li>
+						<ul class = "sub">
+							<li><a>Table of Contents</a></li>
+						</ul>
+                        <li><a>Mechanical Design</a></li>
+                        <ul class = "sub">
+							<li><a>Main Layout</a></li>
+							<li><a>Developing in CAD</a></li>
+                            <li><a>The Mechanum Wheels</a></li>
+                        </ul>
+                        <li><a>Electronic Design</a></li>
+                        <ul class = "sub">
+                            <li><a>Power Distribution</a></li>
+                            <li><a>The Raspberry Pi</a></li>
+                            <li><a>The Arduino Leonardo Sheild</a></li>
+                            <li><a>Custom Dual Stepper Driver Board</a></li>
+                        </ul>
+                        <li><a>Software Design</a></li>
+                        <ul class = "sub">
+                            <li><a>The Client Control Software</a></li>
+                            <li><a>The Server Control Software</a></li>
+						</ul>
+						<li><a>Files</a></li>
+                        <ul class = "sub">
+                            <li><a>CADD</a></li>
+                            <li><a>Github source files</a></li>
+						</ul>
+						
+                </ul>
+
+                <h1>Mechanical Design</h1><hr>
+                <p>
+					When I was first idealizing this robot, the first goal was that I wanted it to be 
+					compact. Thinking back on this decision, this was not a good idea and if I were to 
+					redo the project, I would give my self more space on the robot. Most of the 
+					problems have been either fixed or I had to make a comprimise, but this is all 
+					apart of the design process, so its nothing new.
+				</p>
+				
+				<h2>Main Layout</h2>
+				<p>The main layout of the robot consists of an 1/8th inch (3.175 mm) solid aluminium, cnc cut, plate. This plate has mounting holes for standoffs and brackets. There are 4 steppers motors, one on each corner facing outwards. These steppers are mounted using steel brackets that are bolted down to the bottom plate. Between these steppers are a custom built driver board which handels all the coil driving for the steppers it is between. The driver boards are held in place using a 3D Printed bracket the is mounted to the stepper brackets. Right in the middle of the robot is where the power distribution and logic handeling is done. The battery and 12V-5V DC-DC Converter are placed directly on the plate. Above the bottom plate is another aluminium plate called the top plate, that is of the same thickness of the bottom plate that is held up using brass standoffs. On that holds the "brains" <small>(Raspberry Pi 3b+ w/ a Arduino Leonardo Sheild)</small>.</p>
+
+				<p>
+					Some of the problems that I ran into because of the compact size was were:
+				</p>
+				<ul>
+					 <li>Overall placement of driverboards <small>(The boards between the stepper motors)</small></li>
+					 <li>Size of the stepper motors</li>
+					 <li>Battery size and capacity</li>
+					 <li>I/O ease of access</li>
+					 <li>Room for cooling fans</li>
+				</ul>
+
+                <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.
                     Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu
                     posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum
@@ -101,8 +171,22 @@
                     condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque.
                     posuere nunc justo tempus leo.
                 </p>
+
+                <img class="s1" alt="sample-image" src="images/4to3.jpg">
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.
+                    Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu
+                    posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum
+                    odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra
+                    condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque.
+                    posuere nunc justo tempus leo.
+                </p>
+
             </div>
     </div>
+
+
 
      	<div class="row">
 
@@ -110,7 +194,7 @@
 
 		      <h3>Paragraph and Image</h3>
 
-		      <p><a href="#"><img width="120" height="120" class="pull-left" alt="sample-image" src="images/sample-image.jpg"></a>
+		      <p><a href="#"></a>
 		  		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.
 		  		Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu
 		  		posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum
@@ -433,17 +517,15 @@
    </section> <!--styles -->	
 
 
-   <!-- contact
-   ================================================== -->
-	<section id="contact">
+   <section id="contact">
 
 		<div class="row section-intro">
    		<div class="col-twelve">
 
    			<h5>Contact</h5>
-   			<h1>I'd Love To Hear From You.</h1>
+   			<h1>Questions Or Concerns? I'm All Ears!</h1>
 
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+   			<p class="lead">I love to hear suggestions and other ideas for my future projects, even if they are crazy! Also, I think that criticism is a key part in improving, so any criticism much appreciated!</p>
 
    		</div> 
    	</div> <!-- /section-intro -->
@@ -487,16 +569,16 @@
             <div id="message-warning"></div>            
             <!-- contact-success -->
       		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+               <i class="fas fa-check"></i>Your message was sent, thank you!<br>
       		</div>
 
          </div> <!-- /col-twelve -->
-
+   		
    	</div> <!-- /contact-form -->
 
    	<div class="row contact-info">
 
-   		<div class="col-four tab-full">
+   		<div class="col-six tab-full">
 
    			<div class="icon">
    				<i class="icon-pin"></i>
@@ -505,14 +587,13 @@
    			<h5>Where to find me</h5>
 
    			<p>
-            1600 Amphitheatre Parkway<br>
-            Mountain View, CA<br>
-            94043 US
+				New Jersey, US<br>
+				<small>(Not exact location for obvious reasons.)</small>
             </p>
 
    		</div>
 
-   		<div class="col-four tab-full collapse">
+   		<div class="col-six tab-full collapse">
 
    			<div class="icon">
    				<i class="icon-mail"></i>
@@ -520,29 +601,13 @@
 
    			<h5>Email Me At</h5>
 
-   			<p>someone@kardswebsite.com<br>
-			   	info@kardswebsite.com			     
+   			<p>bradley.gathers@gmail.com<br>		     
 			   </p>
 
    		</div>
-
-   		<div class="col-four tab-full">
-
-   			<div class="icon">
-   				<i class="icon-phone"></i>
-   			</div>
-
-   			<h5>Call Me At</h5>
-
-   			<p>Phone: (+63) 555 1212<br>
-			   	Mobile: (+63) 555 0100<br>
-			     	Fax: (+63) 555 0101
-			   </p>
-
-   		</div>
-
+   		
    	</div> <!-- /contact-info -->
-
+		
 	</section> <!-- /contact -->
 
 
@@ -555,13 +620,10 @@
      		<div class="col-six tab-full pull-right social">
 
      			<ul class="footer-social">        
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			      <li><a href="#"><i class="fa fa-behance"></i></a></li>
-			      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-			      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+			      <li><a href="https://github.com/baxtrax/"><i class="fab fa-github"></i></a></li>
+			      <li><a href="#"><i class="fab fa-discord"></i></a></li>
 			   </ul> 
-
+	      		
 	      </div>
 
       	<div class="col-six tab-full">
@@ -572,7 +634,7 @@
 	      	</div>
 
 	      	<div id="go-top">
-		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fas fa-long-arrow-alt-up"></i></a>
 		      </div>
 
       	</div> <!-- /row -->     	
@@ -590,4 +652,4 @@
 
 </body>
 
-</html> 
+</html>
